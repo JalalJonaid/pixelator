@@ -15,10 +15,14 @@ export default function Nav() {
       <div class="menu">
         <ul>
           <li>
+            <Link to="/">
             <a href="#home">Home</a>
+            </Link>
           </li>
           <li>
+            <Link to="/About">
             <a href="#about">About</a>
+            </Link>
           </li>
         </ul>
         <ul></ul>
