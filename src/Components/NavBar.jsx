@@ -4,28 +4,28 @@ import "./NavBar.css";
 
 export default function Nav() {
   return (
-    <nav class="menu-container">
-      <a href="#home" class="menu-logo">
-        <img
-          src="https://imgtr.ee/images/2023/09/12/2d64344c345cfddb766e7253a9827d33.png"
-          alt="Pixel-ator"
-        />
-      </a>
-
-      <div class="menu">
-        <ul>
-          <li>
-            <Link to="/">
-            <a href="#home">Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link to="/About">
-            <a href="#about">About</a>
-            </Link>
-          </li>
-        </ul>
-        <ul></ul>
+    <nav className="navbar navbar-expand-lg bg-dark fixed-top border-bottom">
+      <div className="container-fluid" >
+        <div className="d-flex align-items-center">
+          <Link to="/" className="menu-logo">
+            <img
+              src="https://imgtr.ee/images/2023/09/12/2d64344c345cfddb766e7253a9827d33.png"
+              alt="Pixel-ator"
+            />
+          </Link>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to="/" >
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/About">
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
