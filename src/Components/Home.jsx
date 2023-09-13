@@ -1,9 +1,11 @@
 import React from 'react';
+import ArtCard from './artCard';
 
-const Home = () => {
+
+const Home = ({link}) => {
   return (
     <div>
-      
+      <ArtCard link={link}/>
     </div>
   );
 }

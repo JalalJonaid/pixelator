@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import ArtCard from "./Components/artCard";
 import { getSingleArt, getValidId } from "./api/fetchArt";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
+import Home from "./Components/Home";
+import NavBar from "./Components/NavBar";
+import About from "./About";
+
 
 function App() {
   const [link, setLink] = useState("");
@@ -10,12 +16,12 @@ function App() {
     try {
       const response = await getValidId();
       const data = await response.json();
-  
+
       const randomIndex = Math.floor(Math.random() * data.objectIDs.length);
       const randomObjectID = data.objectIDs[randomIndex];
-      
+
       console.log(randomObjectID);
-      
+
       return randomObjectID;
     } catch (err) {
       console.error('Error happening!', err);
@@ -39,7 +45,15 @@ function App() {
 
   return (
     <>
-      <ArtCard link={link} />
+      <div className="wrapper">
+        <Router>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<Home link={link} />} />
+              <Route path="/About" element={<About />} />
+            </Routes>
+        </Router>
+      </div >
     </>
   );
 }
