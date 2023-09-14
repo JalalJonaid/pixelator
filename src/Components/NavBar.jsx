@@ -20,8 +20,13 @@ export default function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/About">
+              <Link to="/about">
                 About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/collections">
+                Collections
               </Link>
             </li>
           </ul>
