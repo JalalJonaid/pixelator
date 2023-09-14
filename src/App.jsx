@@ -35,7 +35,7 @@ function App() {
         const id = await getID();
         const response = await getSingleArt(id);
         const data = await response.json();
-        setLink(data.primaryImage);
+        setLink(data);
       } catch (err) {
         console.error('Error happening!', err);
       }
