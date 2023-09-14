@@ -1,5 +1,5 @@
 import React from 'react';
-import ArtCard from './artCard';
+import ArtCard from './ArtCard';
 
 
 const Home = ({link}) => {
