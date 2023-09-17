@@ -30,7 +30,7 @@ export default function About() {
       <div className="row">
         {developers.map((developer, index) => (
           <div className="col-md-3 mb-4" key={index}>
-            <div className="card">
+            <div className="card border border-4">
               <div className="card-body">
                 <h5 className="card-title">{developer.name}</h5>
                 <p className="card-text">{developer.bio}</p>
