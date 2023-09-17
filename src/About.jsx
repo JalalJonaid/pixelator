@@ -10,12 +10,12 @@ export default function About() {
     {
       name: "Shanice Griffin",
       bio: "Shanice bio placeholder",
-      github: "https://github.com/janesmith",
+      github: "https://github.com/shanicegrif",
     },
     {
       name: "Genesis Lara",
       bio: "Genesis bio placeholder",
-      github: "https://github.com/alicebrown",
+      github: "https://github.com/gen329",
     },
     {
       name: "Abel Vargas",
