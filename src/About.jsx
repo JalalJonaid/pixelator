@@ -38,7 +38,7 @@ export default function About() {
                   href={developer.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-primary"
+                  className="btn btn-primary rounded-pill"
                 >
                   Visit GitHub
                 </a>
