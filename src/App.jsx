@@ -7,9 +7,8 @@ import NavBar from "./Components/NavBar";
 import About from "../src/About";
 import Collections from "./Components/Collections";
 
-
 function App() {
-  const [link, setLink] = useState("");
+  const [link, setLink] = useState(null)
 
   const getID = async () => {
     try {
