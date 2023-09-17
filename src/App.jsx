@@ -30,16 +30,25 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const id = await getID();
-        const response = await getSingleArt(id);
-        const data = await response.json();
+        let id = await getID();
+        let response = await getSingleArt(id);
+        let data = await response.json();
+  
+        while (!data.primaryImage) {
+          id = await getID();
+          response = await getSingleArt(id);
+          data = await response.json();
+        }
+  
         setLink(data);
+        
       } catch (err) {
         console.error('Error happening!', err);
       }
-    }
+    };
     fetchData();
   }, []);
+  
 
   return (
     <>
