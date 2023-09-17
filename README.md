@@ -1,8 +1,5 @@
-# React + Vite
+![pixel-ator logo](https://i.ibb.co/cTTcdDR/PIXEL-Ator-2.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the PIXEL-ATOR web application.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The PIXEL-ATOR website seamlessly converts classical art into a pixelated version.
