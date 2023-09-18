@@ -1,13 +1,49 @@
 import React from "react";
-import ArtCard from "./ArtCard";
+import { useRef } from "react";
 
+const Home = ({ link }) => {
+  const canvasRef = useRef(null);
+  const imageRef = useRef(null);
 
-const Home = ({link}) => {
   return (
-    <div className='home-page' style={{ marginTop: "60px" }}>
-      {link ? (<ArtCard link={link}/>) : null}
+    <div className="home-page" style={{ marginTop: "60px" }}>
+      <div>
+        {link ? (
+          <div className="artCard">
+            <img
+              id="pixelitimg"
+              ref={imageRef}
+              src={link.primaryImage}
+              alt=""
+              style={{maxWidth: "200px", maxHeight: "auto"}}
+              onLoad={() => {
+                if (imageRef.current !== null) {
+                  const px = new pixelit({
+                    scale : 8,
+                    palette : [[154, 99, 72]],
+                    maxHeight: 400,
+                    maxWidth: 400,
+                  });
+                  px.draw().pixelate();
+                  imageRef.current.style.visibility = "visible"; //check w/ Tim
+                }
+              }}
+            />
+            <h3>{link.title}</h3>
+            <p>{link.artistDisplayName}</p>
+            <p>{link.objectDate}</p>
+          </div>
+        ) : (
+          <h1>Loading...</h1>
+        )}
+      </div>
+      <canvas
+        id="pixelitcanvas"
+        style={{maxWidth: "200px", maxHeight: "auto"}}
+        ref={canvasRef}
+      ></canvas>
     </div>
   );
-}
+};
 
 export default Home;
