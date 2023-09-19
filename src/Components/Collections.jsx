@@ -65,37 +65,38 @@ const Collections = () => {
           Search
         </button>
       </form>
-      <div className="department-list">
-        {departmentData.map((department) => (
-          <li key={department.departmentId}>
-            {department.departmentId}: {department.displayName}
-          </li>
-        ))}
-      </div>
-
-      <div className="artworks ">
-        {errorMessage && (
-          <div className="alert alert-danger mt-3">
-            Something is wrong with the input, try again.
-          </div>
-        )}
-        {artWorks && artWorks.length > 0 && (
-          <div>
-            {artWorks.map((artwork) => (
-              <div key={artwork.objectID} className="artwork">
-                <img
-                  src={artwork.primaryImage}
-                  alt={artwork.title}
-                  height="200px"
-                  width="200px"
-                />
-                <p>{artwork.title}</p>
-                <p>{artwork.artistDisplayName}</p>
-                <p>{artwork.objectDate}</p>
-              </div>
-            ))}
-          </div>
-        )}
+      {errorMessage && (
+        <div className="alert alert-danger mt-3">
+          Something is wrong with the input, try again.
+        </div>
+      )}
+      <div className="department-art">
+        <div className="department-list">
+          {departmentData.map((department) => (
+            <li key={department.departmentId}>
+              {department.departmentId}: {department.displayName}
+            </li>
+          ))}
+        </div>
+        <div className="artworks row row-cols-2">
+          {artWorks && artWorks.length > 0 && (
+            <div>
+              {artWorks.map((artwork) => (
+                <div key={artwork.objectID} className="art">
+                  <img
+                    src={artwork.primaryImage}
+                    alt={artwork.title}
+                    height="200px"
+                    width="200px"
+                  />
+                  <p>{artwork.title}</p>
+                  <p>{artwork.artistDisplayName}</p>
+                  <p>{artwork.objectDate}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

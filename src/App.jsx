@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <div className="container">
+      <div className="content">
         <Router>
             <NavBar />
             <Routes>
