@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import departmentData from "../departmentData/data.json"
+import departmentData from "../departmentData/data.json";
 
 const Collections = () => {
   const [artWorks, setArtWorks] = useState([]);
@@ -12,7 +12,7 @@ const Collections = () => {
       setErrorMessage(true);
     } else {
       fetchArtworksByDepartment(departmentIdInput);
-      form.reset();
+      setDepartmentIdInput("");
     }
   };
 
@@ -50,8 +50,7 @@ const Collections = () => {
       <h1>Artworks from the Department</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="departmentId">
-          See sample art from a certain Department (enter a number between 1 &
-          21):
+          See sample art from a certain Department (enter a number from below):
         </label>
         <input
           type="number"
@@ -66,16 +65,22 @@ const Collections = () => {
           Search
         </button>
       </form>
-      <div className="error-message"> 
+      <div className="department-list">
+        {departmentData.map((department) => (
+          <li key={department.departmentId}>
+            {department.departmentId}: {department.displayName}
+          </li>
+        ))}
+      </div>
+
+      <div className="artworks ">
         {errorMessage && (
           <div className="alert alert-danger mt-3">
             Something is wrong with the input, try again.
           </div>
         )}
-      </div>
-      <div className="artworks ">
         {artWorks && artWorks.length > 0 && (
-            <div>
+          <div>
             {artWorks.map((artwork) => (
               <div key={artwork.objectID} className="artwork">
                 <img
