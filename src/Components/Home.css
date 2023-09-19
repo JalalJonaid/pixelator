@@ -15,6 +15,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 50px;
 }
 
 .button-74:hover {
@@ -45,4 +46,12 @@
     min-width: 120px;
     padding: 0 25px;
   }
+}
+
+.loading_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  margin-left: 400px;
 }
