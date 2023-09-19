@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import './Home.css'
+import {pixelit} from "../pixelit.js"
 
 const Home = ({ link }) => {
   const canvasRef = useRef(null);
