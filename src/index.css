@@ -1,5 +1,7 @@
 body {
-  margin: 0;
+  overflow-x: hidden;
+    font-family: Sans-Serif;
+    margin: 50;
 }
 
 a {
@@ -27,6 +29,26 @@ input, button {
 .department-art {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
+  margin-top: 15px;
   padding-bottom: 3rem;
+}
+
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Add gap between grid items for spacing */
+  margin-top: 15px;
+  padding-bottom: 3rem;
+}
+
+.art {
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 10px; /* Add padding to create space within each art item */
+  text-align: center; /* Center text within each art item */
+}
+
+.art img {
+  max-width: 100%; /* Ensure images don't exceed the width of their container */
+  height: auto; /* Maintain image aspect ratio */
 }
