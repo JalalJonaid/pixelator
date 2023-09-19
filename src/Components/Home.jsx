@@ -56,7 +56,7 @@ const Home = ({ link }) => {
             </div>
           ) : (
             <div className="loading_image">
-              <img src="../favicon/loading_image.png"></img>
+              <img src="../favicon/loading-image-unscreen.gif"></img>
             </div>
           )}
         </div>
