@@ -5,15 +5,19 @@ const Collections = () => {
   const [artWorks, setArtWorks] = useState([]);
   const [departmentIdInput, setDepartmentIdInput] = useState("");
   const [errorType, setErrorType] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorType(null);
+    setIsLoading(true);
 
     if (departmentIdInput === "") {
       setErrorType("empty");
+      setIsLoading(false);
     } else if (departmentIdInput === "2") {
       setErrorType("nonExistent");
+      setIsLoading(false);
     } else {
       fetchArtworksByDepartment(departmentIdInput);
       setDepartmentIdInput("");
@@ -49,9 +53,10 @@ const Collections = () => {
 
       setErrorType(null);
       setArtWorks(validArtworks);
-      console.log(validArtworks);
+      setIsLoading(false);
     } catch (error) {
       console.error(`Error fetching art pieces by department:`, error);
+      setIsLoading(false);
     }
   };
 
@@ -93,25 +98,29 @@ const Collections = () => {
             </li>
           ))}
         </div>
-        <div className="artworks row row-cols-2">
-          {artWorks && artWorks.length > 0 && (
-            <div>
-              {artWorks.map((artwork) => (
-                <div key={artwork.objectID} className="art">
-                  <img
-                    src={artwork.primaryImage}
-                    alt={artwork.title}
-                    height="200px"
-                    width="200px"
-                  />
-                  <p>{artwork.title}</p>
-                  <p>{artwork.artistDisplayName}</p>
-                  <p>{artwork.objectDate}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        {isLoading ? ( // Use a ternary operator to conditionally render either loading message or artworks
+          <div className="alert alert-info mt-3">Loading... Please wait.</div>
+        ) : (
+          <div className="artworks">
+            {artWorks && artWorks.length > 0 && (
+              <div>
+                {artWorks.map((artwork) => (
+                  <div key={artwork.objectID} className="art">
+                    <img
+                      src={artwork.primaryImage}
+                      alt={artwork.title}
+                      height="200px"
+                      width="200px"
+                    />
+                    <p>{artwork.title}</p>
+                    <p>{artwork.artistDisplayName}</p>
+                    <p>{artwork.objectDate}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
