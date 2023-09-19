@@ -33,22 +33,15 @@ input, button {
   padding-bottom: 3rem;
 }
 
-.artworks {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px; /* Add gap between grid items for spacing */
-  margin-top: 15px;
-  padding-bottom: 3rem;
-}
-
 .art {
   border: 2px solid grey;
+  width: 250px;
   border-radius: 5px;
-  padding: 10px; /* Add padding to create space within each art item */
-  text-align: center; /* Center text within each art item */
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .art img {
-  max-width: 100%; /* Ensure images don't exceed the width of their container */
-  height: auto; /* Maintain image aspect ratio */
+  max-width: 100%; 
+  height: auto;
 }

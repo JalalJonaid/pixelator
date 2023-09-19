@@ -26,6 +26,20 @@
   transform: translate(2px, 2px);
 }
 
+.art-card-container {
+  justify-content: center;
+}
+
+.details {
+  margin-top: 150px;
+  margin-left: 20px;
+}
+
+.original-img {
+  max-width: 325px;
+  max-height: auto;
+}
+
 @media (min-width: 768px) {
   .button-74 {
     min-width: 120px;
