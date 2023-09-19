@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "./NavBar.css";
 
 export default function Nav() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
