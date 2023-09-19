@@ -7,9 +7,14 @@ const Home = ({ link }) => {
   const canvasRef = useRef(null);
   const imageRef = useRef(null);
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="home-page" style={{ marginTop: "60px" }}>
       <div className="art-card-container">
+      <button className="button-74" onClick={handleRefresh}>PIXEL-ATE</button>
         {link ? (
           <div className="artCard">
             <img
