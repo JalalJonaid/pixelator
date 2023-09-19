@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import './Home.css'
 
 const Home = ({ link }) => {
   const canvasRef = useRef(null);
@@ -7,14 +8,13 @@ const Home = ({ link }) => {
 
   return (
     <div className="home-page" style={{ marginTop: "60px" }}>
-      <div>
+      <div className="art-card-container">
         {link ? (
           <div className="artCard">
             <img
               id="pixelitimg"
               ref={imageRef}
               src={link.primaryImage}
-              alt=""
               style={{maxWidth: "200px", maxHeight: "auto"}}
               onLoad={() => {
                 if (imageRef.current !== null) {
@@ -39,7 +39,7 @@ const Home = ({ link }) => {
       </div>
       <canvas
         id="pixelitcanvas"
-        style={{maxWidth: "200px", maxHeight: "auto"}}
+        style={{maxWidth: "350px", maxHeight: "auto"}}
         ref={canvasRef}
       ></canvas>
     </div>
