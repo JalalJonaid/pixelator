@@ -8,7 +8,7 @@ import About from "../src/About";
 import Collections from "./Components/Collections";
 
 function App() {
-  const [link, setLink] = useState(null)
+  const [link, setLink] = useState(null);
 
   const getID = async () => {
     try {
@@ -18,14 +18,12 @@ function App() {
       const randomIndex = Math.floor(Math.random() * data.objectIDs.length);
       const randomObjectID = data.objectIDs[randomIndex];
 
-      console.log(randomObjectID);
-
       return randomObjectID;
     } catch (err) {
-      console.error('Error happening!', err);
+      console.error("Error happening!", err);
       throw err;
     }
-  }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,33 +31,31 @@ function App() {
         let id = await getID();
         let response = await getSingleArt(id);
         let data = await response.json();
-  
+
         while (!data.primaryImage) {
           id = await getID();
           response = await getSingleArt(id);
           data = await response.json();
         }
-  
+
         setLink(data);
-        
       } catch (err) {
-        console.error('Error happening!', err);
+        console.error("Error happening!", err);
       }
     };
     fetchData();
   }, []);
-  
 
   return (
     <>
       <div className="content">
         <Router>
-            <NavBar />
-            <Routes>
-              <Route path="/" element={<Home link = {link} />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/collections" element={<Collections />} />
-            </Routes>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home link={link} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/collections" element={<Collections />} />
+          </Routes>
         </Router>
       </div>
     </>
