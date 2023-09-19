@@ -32,6 +32,8 @@ const Home = ({ link }) => {
                   });
                   px.draw().pixelate();
                   imageRef.current.style.visibility = "visible"; //check w/ Tim
+                  // imageRef.current.style.position = "relative";
+                  imageRef.current.style.top = "100px";
                 }
               }}
             />
