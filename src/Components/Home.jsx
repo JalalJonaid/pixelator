@@ -35,12 +35,14 @@ const Home = ({ link }) => {
             <p>{link.objectDate}</p>
           </div>
         ) : (
-          <h1>Loading...</h1>
+          <div className="loading_image">
+          <img src="../favicon/loading_image.png"></img>
+          </div>
         )}
       </div>
       <canvas
         id="pixelitcanvas"
-        style={{maxWidth: "350px", maxHeight: "auto"}}
+        style={{maxWidth: "200px", maxHeight: "auto"}}
         ref={canvasRef}
       ></canvas>
     </div>
