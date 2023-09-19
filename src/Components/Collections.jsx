@@ -98,7 +98,7 @@ const Collections = () => {
             </li>
           ))}
         </div>
-        {isLoading ? ( // Use a ternary operator to conditionally render either loading message or artworks
+        {isLoading ? (
           <div className="alert alert-info mt-3">Loading... Please wait.</div>
         ) : (
           <div className="artworks">

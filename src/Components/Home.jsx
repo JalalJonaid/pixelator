@@ -44,7 +44,6 @@ const Home = ({ link }) => {
                       maxWidth: 400,
                     });
                     px.draw().pixelate();
-                    // imageRef.current.style.visibility = "visible"; //check w/ Tim
                   }
                 }}
               />

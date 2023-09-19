@@ -15,3 +15,5 @@ In the collections tab you can view a variety of different galleries related to 
 corresponding with the number and title shown in the description
 
 Navigating to the About page shows all members of the group that helped in the creation of this application
+
+[Group Norms](https://docs.google.com/document/d/1XmY_1XtWVBOsOISaWNk95X32dzU8i_V0BxRo3odeUsA/edit)
