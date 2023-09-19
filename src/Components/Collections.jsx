@@ -4,12 +4,16 @@ import departmentData from "../departmentData/data.json";
 const Collections = () => {
   const [artWorks, setArtWorks] = useState([]);
   const [departmentIdInput, setDepartmentIdInput] = useState("");
-  const [errorMessage, setErrorMessage] = useState(false);
+  const [errorType, setErrorType] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (departmentIdInput === "" || departmentIdInput === "2") {
-      setErrorMessage(true);
+    setErrorType(null);
+
+    if (departmentIdInput === "") {
+      setErrorType("empty");
+    } else if (departmentIdInput === "2") {
+      setErrorType("nonExistent");
     } else {
       fetchArtworksByDepartment(departmentIdInput);
       setDepartmentIdInput("");
@@ -34,12 +38,18 @@ const Collections = () => {
         const objectData = await objectResponse.json();
 
         if (objectData.primaryImage) {
-          validArtworks.push(objectData);
+          const exist = validArtworks.some(
+            (artwork) => artwork.objectName === objectData.objectName
+          );
+          if (!exist) {
+            validArtworks.push(objectData);
+          }
         }
       }
 
-      setErrorMessage(false);
+      setErrorType(null);
       setArtWorks(validArtworks);
+      console.log(validArtworks);
     } catch (error) {
       console.error(`Error fetching art pieces by department:`, error);
     }
@@ -65,9 +75,14 @@ const Collections = () => {
           Search
         </button>
       </form>
-      {errorMessage && (
+      {errorType === "empty" && (
         <div className="alert alert-danger mt-3">
-          Something is wrong with the input, try again.
+          Search is empty, enter a number.
+        </div>
+      )}
+      {errorType === "nonExistent" && (
+        <div className="alert alert-danger mt-3">
+          Department does not exist, try again.
         </div>
       )}
       <div className="department-art">
