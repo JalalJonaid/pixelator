@@ -38,12 +38,6 @@ export default function Nav() {
             <Link to="/collections">Collections</Link>
           </li>
         </ul>
-        <div className="ml-3">
-          <i className="fas fa-video fa-lg mr-2"></i>
-          <i className="fas fa-th fa-lg mr-2"></i>
-          <i className="fas fa-bell fa-lg mr-2"></i>
-          <i className="fas fa-user-circle fa-lg"></i>
-        </div>
       </div>
     </nav>
   );
