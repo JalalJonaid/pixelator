@@ -15,7 +15,7 @@ const Collections = () => {
     if (departmentIdInput === "") {
       setErrorType("empty");
       setIsLoading(false);
-    } else if (departmentIdInput === "2") {
+    } else if (departmentIdInput === "2" || departmentIdInput === "20") {
       setErrorType("nonExistent");
       setIsLoading(false);
     } else {
