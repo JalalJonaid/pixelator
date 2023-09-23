@@ -34,7 +34,7 @@ const Home = ({ link }) => {
                 id="pixelitimg"
                 ref={imageRef}
                 src={link.primaryImage}
-                style={{ maxWidth: "200px", maxHeight: "auto" }}
+                style={{ maxWidth: "325px", maxHeight: "auto" }}
                 onLoad={() => {
                   if (imageRef.current !== null) {
                     const px = new pixelit({
