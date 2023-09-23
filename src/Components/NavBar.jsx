@@ -17,7 +17,7 @@ export default function Nav() {
 
       <Link to="/" className="navbar-brand">
         <img
-        className={`youtube-logo ${sidebarOpen ? "d-none" : ""}`}
+        className={`pixel-logo ${sidebarOpen ? "d-none" : ""}`}
           src="https://imgtr.ee/images/2023/09/12/2d64344c345cfddb766e7253a9827d33.png"
           alt="Pixel-ator"
           height="40"
